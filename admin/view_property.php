@@ -139,11 +139,9 @@ if(isset($_POST['delete'])){
          </div>
          <div class="box">
             <p><i>carpet area :</i><span><?= $fetch_property['carpet']; ?>sqft</span></p>
-            <p><i>age :</i><span><?= $fetch_property['age']; ?> years</span></p>
             <p><i>total floors :</i><span><?= $fetch_property['total_floors']; ?></span></p>
             <p><i>room floor :</i><span><?= $fetch_property['room_floor']; ?></span></p>
             <p><i>furnished :</i><span><?= $fetch_property['furnished']; ?></span></p>
-            <p><i>loan :</i><span><?= $fetch_property['loan']; ?></span></p>
          </div>
       </div>
       <h3 class="title">amenities</h3>

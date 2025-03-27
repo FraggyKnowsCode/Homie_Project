@@ -10,6 +10,7 @@ if(isset($_COOKIE['user_id'])){
 
 include 'components/save_send.php';
 
+
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +32,17 @@ include 'components/save_send.php';
 </head>
 <body>
 
-<!-- Removed the header -->
-<!-- <?php include 'components/user_header.php'; ?> -->
+
+
+<?php include 'components/user_header.php'; ?>
+<!-- Background section starts -->
+<section class="hero-section">
+   <div class="hero-bg">
+      <h1>Welcome to Homie</h1>
+      <p>Your Trusted Home-Finding Companion</p>
+   </div>
+</section>
+<!-- Background section ends -->
 
 <!-- home section starts -->
 <div class="home">

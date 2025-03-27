@@ -7,7 +7,7 @@
       <a href="home.php" class="logo"><img src="images/homie-logo.png" alt="Homie Logo"></a>
 
          <ul>
-            <li><a href="post_property.php">post property<i class="fas fa-paper-plane"></i></a></li>
+            <li><a href="dashboard.php"><i class="fas fa-user"></i> dashboard</a></li>
          </ul>
       </section>
    </nav>
@@ -44,7 +44,7 @@
                   <li><a href="components/user_logout.php" onclick="return confirm('logout from this website?');">logout</a>
                   <?php } ?></li>
                </ul>
-               <li><a href="dashboard.php">dashboard</a></a>
+               <li><a href="post_property.php">post property</a></a>
             </li>
          </ul>
       </section>

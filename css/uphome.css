@@ -1,75 +1,105 @@
-/* Swiper container styles */
-.swiper-container {
-    width: 100%; /* Keep it full width */
-    max-width: 1200px; /* Reduce the maximum width by 0.2% */
-    height: auto; /* Allow height to adjust dynamically */
-    margin: auto; /* Center the Swiper */
-    background: #fff; /* White background for the Swiper */
-    border-radius: 14.7px; /* Slightly smaller rounded corners */
-    box-shadow: 0 7.8px 15.7px rgba(0, 0, 0, 0.2); /* Slightly reduce the shadow intensity */
-    overflow: hidden;
-    position: relative;
-    z-index: 2; /* Ensure it appears above the background image */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+ }
+ 
+.hero-section {
+    position: center;
+    width: 100%;
+    height: 100vh;
+    background: url('../images/homie-bg.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
 }
 
-/* Swiper slide styling */
+.hero-section h1 {
+    font-size: 8rem;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.swiper-container {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: auto;
+    background: #fff;
+    border-radius: 14.7px;
+    box-shadow: 0 7.8px 15.7px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 29.4px; /* Slightly reduce padding */
+    padding: 29.4px;
 }
 
-/* Listing box styling */
 .listing-box {
     display: flex;
-    flex-direction: column; /* Stack the image and description vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 19.6px; /* Slightly reduce spacing between the image and description */
+    gap: 19.6px;
     width: 100%;
 }
 
-/* Image container styling */
 .image-container {
-    width: 50%; /* Keep the image container full width */
-    max-width: 1000px; /* Slightly reduce the maximum width of the image */
+    width: 50%;
+    max-width: 1000px;
 }
 
 .image-container img {
     width: 100%;
     height: auto;
-    border-radius: 14.7px; /* Match the container's slightly smaller rounded corners */
+    border-radius: 14.7px;
 }
 
-/* Info container styling */
 .info-container {
-    width: 70%; /* Keep the description container full width */
-    max-width: 800 px; /* Slightly reduce the maximum width of the description */
-    text-align: center; /* Center-align the text */
-    padding: 10 px; /* Slightly reduce padding */
+    width: 70%;
+    max-width: 800 px;
+    text-align: center;
+    padding: 10 px;
 }
 
 .info-container h3 {
-    font-size: 2.45rem; /* Slightly reduce font size for the title */
+    font-size: 2.45rem;
     margin-bottom: 14.7px;
 }
 
 .info-container p {
-    font-size: 1.47rem; /* Slightly reduce font size for the details */
+    font-size: 1.47rem;
     margin-bottom: 14.7px;
 }
 
 .info-container .btn {
     display: inline-block;
-    padding: 10px 10px; /* Slightly reduce button size */
+    padding: 10px 10px;
     background: #007bff;
     color: #fff;
     text-decoration: none;
-    border-radius: 7.8px; /* Slightly smaller rounded corners for the button */
+    border-radius: 7.8px;
     text-align: center;
     transition: background 0.3s ease;
-    font-size: 2rem; /* Slightly reduce font size for the button text */
+    font-size: 2rem;
 }
 
 .info-container .btn:hover {
@@ -77,7 +107,7 @@
 }
 
 .home {
-    background: #f9f9f9; /* White background for the entire section */
-    padding: 0px 0px; /* Slightly reduce padding */
+    background: #f9f9f9;
+    padding: 0px 0px;
     position: relative;
 }

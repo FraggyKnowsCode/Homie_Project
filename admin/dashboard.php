@@ -40,14 +40,21 @@ if(isset($_COOKIE['admin_id'])){
 
    <div class="box-container">
 
-   <div class="box">
+      <div class="box">
       <?php
          $select_profile = $conn->prepare("SELECT * FROM `admins` WHERE id = ? LIMIT 1");
          $select_profile->execute([$admin_id]);
          $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+   
+
+         if ($fetch_profile) {
+            $admin_name = $fetch_profile['name'];
+         } else {
+            $admin_name = 'Admin';
+         }
       ?>
       <h3>welcome!</h3>
-      <p><?= $fetch_profile['name']; ?></p>
+      <p><?= htmlspecialchars($admin_name); ?></p>
       <a href="update.php" class="btn">update profile</a>
    </div>
 
@@ -101,23 +108,6 @@ if(isset($_COOKIE['admin_id'])){
 
 
 <!-- dashboard section ends -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
