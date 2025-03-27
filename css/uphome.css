@@ -1,0 +1,83 @@
+/* Swiper container styles */
+.swiper-container {
+    width: 100%; /* Keep it full width */
+    max-width: 1200px; /* Reduce the maximum width by 0.2% */
+    height: auto; /* Allow height to adjust dynamically */
+    margin: auto; /* Center the Swiper */
+    background: #fff; /* White background for the Swiper */
+    border-radius: 14.7px; /* Slightly smaller rounded corners */
+    box-shadow: 0 7.8px 15.7px rgba(0, 0, 0, 0.2); /* Slightly reduce the shadow intensity */
+    overflow: hidden;
+    position: relative;
+    z-index: 2; /* Ensure it appears above the background image */
+}
+
+/* Swiper slide styling */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 29.4px; /* Slightly reduce padding */
+}
+
+/* Listing box styling */
+.listing-box {
+    display: flex;
+    flex-direction: column; /* Stack the image and description vertically */
+    align-items: center;
+    gap: 19.6px; /* Slightly reduce spacing between the image and description */
+    width: 100%;
+}
+
+/* Image container styling */
+.image-container {
+    width: 50%; /* Keep the image container full width */
+    max-width: 1000px; /* Slightly reduce the maximum width of the image */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 14.7px; /* Match the container's slightly smaller rounded corners */
+}
+
+/* Info container styling */
+.info-container {
+    width: 70%; /* Keep the description container full width */
+    max-width: 800 px; /* Slightly reduce the maximum width of the description */
+    text-align: center; /* Center-align the text */
+    padding: 10 px; /* Slightly reduce padding */
+}
+
+.info-container h3 {
+    font-size: 2.45rem; /* Slightly reduce font size for the title */
+    margin-bottom: 14.7px;
+}
+
+.info-container p {
+    font-size: 1.47rem; /* Slightly reduce font size for the details */
+    margin-bottom: 14.7px;
+}
+
+.info-container .btn {
+    display: inline-block;
+    padding: 10px 10px; /* Slightly reduce button size */
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 7.8px; /* Slightly smaller rounded corners for the button */
+    text-align: center;
+    transition: background 0.3s ease;
+    font-size: 2rem; /* Slightly reduce font size for the button text */
+}
+
+.info-container .btn:hover {
+    background: #0056b3;
+}
+
+.home {
+    background: #f9f9f9; /* White background for the entire section */
+    padding: 0px 0px; /* Slightly reduce padding */
+    position: relative;
+}
