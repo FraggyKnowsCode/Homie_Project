@@ -1,0 +1,5 @@
+To push any changes on git, first add it to git using 
+1. git add filename
+2. git status
+3. git commit -m "Any message"
+4. git push origin master
