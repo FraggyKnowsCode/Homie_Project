@@ -1,4 +1,4 @@
-<?php
+git remote add origin https://github.com/FraggyKnowsCode/Homie_Project.git<?php
 
 include 'components/connect.php';
 
@@ -84,7 +84,7 @@ if(isset($_POST['submit'])){
       <input type="number" name="number" required min="0" max="99999999999" maxlength="11" placeholder="enter your number" class="box">
       <input type="password" name="pass" required maxlength="20" placeholder="enter your password" class="box">
       <input type="password" name="c_pass" required maxlength="20" placeholder="confirm your password" class="box">
-      <p>already have an account? <a href="login.html">login now</a></p>
+      <p>already have an account? <a href="login.php">login now</a></p>
       <input type="submit" value="register now" name="submit" class="btn">
    </form>
 

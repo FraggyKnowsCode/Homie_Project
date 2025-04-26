@@ -10,6 +10,7 @@ if(isset($_COOKIE['user_id'])){
 
 include 'components/save_send.php';
 
+
 ?>
 
 <!DOCTYPE html>
@@ -20,116 +21,79 @@ include 'components/save_send.php';
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Home</title>
 
-   <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css>
+   <!-- font awesome cdn link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-   <!-- custom css file link  -->
+   <!-- custom css file link -->
    <link rel="stylesheet" href="css/style.css">
 
+   <!-- uphome-specific css file -->
+   <link rel="stylesheet" href="css/uphome.css">
 </head>
 <body>
-   
+
+
+
 <?php include 'components/user_header.php'; ?>
+<!-- Background section starts -->
+<section class="hero-section">
+   <div class="hero-bg">
+      <h1>Welcome to Homie</h1>
+      <p>Your Trusted Home-Finding Companion</p>
+   </div>
+</section>
+<!-- Background section ends -->
 
-
-<!-- home section starts  -->
-
+<!-- home section starts -->
 <div class="home">
-
    <section class="center">
-
-      <form action="search.php" method="post">
-         <h3>find your perfect home</h3>
-         <div class="box">
-            <p>enter location <span>*</span></p>
-            <input type="text" name="h_location" required maxlength="100" placeholder="enter city name" class="input">
+      <!-- Swiper container -->
+      <div class="swiper-container">
+         <div class="swiper-wrapper">
+            <?php
+               $select_properties = $conn->prepare("SELECT * FROM `property` ORDER BY date DESC LIMIT 6");
+               $select_properties->execute();
+               if($select_properties->rowCount() > 0){
+                  while($fetch_property = $select_properties->fetch(PDO::FETCH_ASSOC)){
+                     $image_path = !empty($fetch_property['image_01']) ? 'uploaded_files/' . $fetch_property['image_01'] : 'images/default-image.jpg';
+            ?>
+            <div class="swiper-slide">
+               <div class="listing-box">
+                  <div class="image-container">
+                     <img src="<?= $image_path; ?>" alt="Property Image">
+                  </div>
+                  <div class="info-container">
+                     <h3><?= $fetch_property['property_name']; ?></h3>
+                     <p><?= $fetch_property['address']; ?></p>
+                     <p><strong>Price:</strong> <?= $fetch_property['price']; ?></p>
+                     <a href="view_property.php?get_id=<?= $fetch_property['id']; ?>" class="btn">View Property</a>
+                  </div>
+               </div>
+            </div>
+            <?php
+                  }
+               } else {
+                  echo '<p class="empty">No properties added yet!</p>';
+               }
+            ?>
          </div>
-         <div class="flex">
-            <div class="box">
-               <p>property type <span>*</span></p>
-               <select name="h_type" class="input" required>
-                  <option value="flat">flat</option>
-                  <option value="house">house</option>
-                  <option value="shop">bachelor</option>
-               </select>
-            </div>
-            <div class="box">
-               <p>offer type <span>*</span></p>
-               <select name="h_offer" class="input" required>
-                  <option value="rent">rent</option>
-               </select>
-            </div>
-            <div class="box">
-               <p>maximum budget <span>*</span></p>
-               <select name="h_min" class="input" required>
-                  <option value="5000">5k</option>
-                  <option value="10000">10k</option>
-                  <option value="15000">15k</option>
-                  <option value="20000">20k</option>
-                  <option value="30000">30k</option>
-                  <option value="40000">40k</option>
-                  <option value="40000">40k</option>
-                  <option value="50000">50k</option>
-                  <option value="100000">1 lac</option>
-                  <option value="500000">5 lac</option>
-               </select>
-            </div>
-            <div class="box">
-               <p>maximum budget <span>*</span></p>
-               <select name="h_max" class="input" required>
-                  <option value="5000">5k</option>
-                  <option value="10000">10k</option>
-                  <option value="15000">15k</option>
-                  <option value="20000">20k</option>
-                  <option value="30000">30k</option>
-                  <option value="40000">40k</option>
-                  <option value="40000">40k</option>
-                  <option value="50000">50k</option>
-                  <option value="100000">1 lac</option>
-                  <option value="500000">5 lac</option>
-               </select>
-            </div>
-         </div>
-         <input type="submit" value="search property" name="h_search" class="btn">
-      </form>
-
+         <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div>
+      </div>
    </section>
-
 </div>
-
 <!-- home section ends -->
 
-<!-- services section starts  -->
+<!-- Include Swiper.js -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-<section class="services">
+<!-- uphome-specific js file -->
+<script src="js/uphome.js"></script>
 
-   <h1 class="heading">our services</h1>
+</body>
+</html>
 
-   <div class="box-container">
-
-      <div class="box">
-         <img src="images/icon-2.png" alt="">
-         <h3>Rent House</h3>
-         <p>Rent a house for a large family.</p>
-      </div>
-
-      <div class="box">
-         <img src="images/icon-4.png" alt="">
-         <h3>Rent Flat</h3>
-         <p>Rent a flat for your family.</p>
-      </div>
-
-      <div class="box">
-         <img src="images/icon-2.png" alt="">
-         <h3>Bachelor</h3>
-         <p>Rent a room if you're bachelor.</p>
-      </div>
-
-   </div>
-
-</section>
-
-<!-- services section ends -->
 
 <!-- listings section starts  -->
 
@@ -237,11 +201,37 @@ include 'components/save_send.php';
 
 <!-- listings section ends -->
 
+<!-- services section starts  -->
 
+<section class="services">
 
+   <h1 class="heading">our services</h1>
 
+   <div class="box-container">
 
+      <div class="box">
+         <img src="images/icon-2.png" alt="">
+         <h3>Rent House</h3>
+         <p>Rent a house for a large family.</p>
+      </div>
 
+      <div class="box">
+         <img src="images/icon-4.png" alt="">
+         <h3>Rent Flat</h3>
+         <p>Rent a flat for your family.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/icon-2.png" alt="">
+         <h3>Bachelor</h3>
+         <p>Rent a room if you're bachelor.</p>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- services section ends -->
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
