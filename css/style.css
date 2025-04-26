@@ -452,32 +452,6 @@ section{
    margin-bottom: 1.5rem;
 }
 
-/* .view-property .details .thumb .big-image img{
-   height: 40rem;
-   width: 100%;
-   object-fit: contain;
-}
-
-.view-property .details .thumb .small-images{
-   display: flex;
-   justify-content: center;
-   gap: 1.5rem;
-   padding-top: 1rem;
-   flex-wrap: wrap;
-}
-
-.view-property .details .thumb .small-images img{
-   height: 7rem;
-   width: 10rem;
-   object-fit: cover;
-   cursor: pointer;
-   transition: .2s linear;
-}
-
-.view-property .details .thumb .small-images img:hover{
-   transform: scale(1.1);
-} */
-
 .view-property .details .images-container{
    padding-bottom: 3rem;
 }
