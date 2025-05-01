@@ -6,10 +6,10 @@ if(isset($_POST['submit'])){
 
    $name = $_POST['name'];
    $name = filter_var($name, FILTER_SANITIZE_STRING); 
-   $pass = sha1($_POST['pass']);
+   $pass = $_POST['pass'];
    $pass = filter_var($pass, FILTER_SANITIZE_STRING); 
 
-   $select_admins = $conn->prepare("SELECT * FROM `admins` WHERE name = ? AND password = ? LIMIT 1");
+   $select_admins = $conn->prepare("SELECT * FROM admins WHERE name = ? AND password = ? LIMIT 1");
    $select_admins->execute([$name, $pass]);
    $row = $select_admins->fetch(PDO::FETCH_ASSOC);
 
@@ -21,6 +21,7 @@ if(isset($_POST['submit'])){
    }
 
 }
+
 
 ?>
 
